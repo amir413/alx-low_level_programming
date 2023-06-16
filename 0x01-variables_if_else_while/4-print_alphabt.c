@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 /**
- * *main - Entry point of the program
+ * main - Entry point of the program
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	char letters;
+	char letter;
 
-	for (letter = 'a' ; letter <= 'z' ; letter++)
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
 		if (letter != 'e' && letter != 'q')
 			putchar(letter);
@@ -17,5 +17,6 @@ int main(void)
 
 	putchar('\n');
 
-	return (o);
+	return (0);
 }
+
