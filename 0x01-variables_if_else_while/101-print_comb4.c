@@ -7,17 +7,16 @@
  */
 int main(void)
 {
-	int firstDigit;
-	int secondDigit;
+	int digits;
 
-	for (firstDigit = 0; firstDigit < 9; firstDigit++)
+	for (digits = 0; digits < 100; digits++)
 	{
-		for (secondDigit = firstDigit + 1; secondDigit < 10; secondDigit++)
+		if (digits % 10 > digits / 10)
 		{
-			putchar(firstDigit + '0');
-			putchar(secondDigit + '0');
+			putchar(digits / 10 + '0');
+			putchar(digits % 10 + '0');
 
-			if (firstDigit != 8 || secondDigit != 9)
+			if (digits != 89)
 			{
 				putchar(',');
 				putchar(' ');
@@ -29,3 +28,5 @@ int main(void)
 
 	return (0);
 }
+
+
