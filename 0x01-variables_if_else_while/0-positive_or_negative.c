@@ -1,20 +1,32 @@
-#include <stdio>
-int main (void){
-	srand(time(0)); // Initialize random number generator
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-    int n = rand() % RAND_MAX; // Generate a random number
+/**
+ * main - Entry point of the program
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+        int n;
 
-    printf("The number %d is ", n);
+        srand(time(0));
 
-    if (n > 0) {
-        printf("positive");
-    } else if (n == 0) {
-        printf("zero");
-    } else {
-        printf("negative");
-    }
+        n = rand() - RAND_MAX / 2;
 
-    printf("\n");
+        if (n > 0)
+        {
+                printf("%d is positive\n", n);
+        }
+        else if (n == 0)
+        {
+                printf("%d is zero\n", n);
+        }
+        else
+        {
+                printf("%d is negative\n", n);
+        }
 
-    return 0;
+        return (0);
 }
