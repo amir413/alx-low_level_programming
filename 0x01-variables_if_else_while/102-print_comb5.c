@@ -5,34 +5,34 @@
  *
  * Return: Always 0 (Success)
  */
-#include<stdio.h>
 int main(void)
 {
-    int firstDigit = 0 , seconDigit;
+	int firstDigit = 0, secondDigit;
 
-    while (firstDigit <= 99)
-    {
-        seconDigit = firstDigit;
-        while (seconDigit <= 99)
-        {
-            if (seconDigit != firstDigit)
-            {
-                putchar((firstDigit / 10) + 48);
-                putchar((firstDigit % 10) + 48);
-                putchar(' ');
-                putchar((seconDigit / 10) + 48);
-                putchar((seconDigit % 10) + 48);
+	while (firstDigit <= 99)
+	{
+		secondDigit = firstDigit;
+		while (secondDigit <= 99)
+		{
+			if (secondDigit != firstDigit)
+			{
+				putchar((firstDigit / 10) + '0');
+				putchar((firstDigit % 10) + '0');
+				putchar(' ');
+				putchar((secondDigit / 10) + '0');
+				putchar((secondDigit % 10) + '0');
 
-                if (firstDigit !=98 || seconDigit != 99)
-                {
-                    putchar(',');
-                    putchar(' ');
-                }
-            }
-            seconDigit++;
-        }
-        firstDigit++;
-    }
-    putchar('\n');
-    return (0);
+				if (firstDigit != 98 || secondDigit != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+			secondDigit++;
+		}
+		firstDigit++;
+	}
+	putchar('\n');
+	return (0);
 }
+
