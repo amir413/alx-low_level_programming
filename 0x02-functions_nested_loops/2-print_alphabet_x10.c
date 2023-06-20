@@ -1,4 +1,4 @@
-#include "main.h"
+#include "stdio.h"
 
 /**
  * main - check the code.
@@ -7,13 +7,13 @@
  */
 int main(void)
 {
-	int i;
-	char alp;
-	for (i=0 ; i<10 ; i++){
-		for (alp = 'a' ; alp <= z ; alp++){
-			printf ("%c ", alp);
-		}
-		printf("\n");
-	}
-	return (0);
+        int i;
+        char alp;
+        for (i=0 ; i<10 ; i++){
+                for (alp = 'a' ; alp <= 'z' ; alp++){
+                        printf ("%c ", alp);
+                }
+                printf("\n");
+        }
+        return (0);
 }
