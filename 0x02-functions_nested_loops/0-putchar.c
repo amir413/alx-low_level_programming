@@ -1,12 +1,13 @@
 #include <stdio.h>
 /**
- * _putchar - writes the character c to stdout
- * @c: The Character to print
- * Return: On success l.
- * On error, -l is returned, and errno is set appropriately.
+ * main - Entry point
+ *
+ * Description: prints _putchar using putchar prototype
+ *
+ * Return: Always 0 (Success)
  */
 int main(void) {
     printf("_putchar\n");
-    return 0;
+    return (0);
 }
 
