@@ -5,7 +5,8 @@
  *
  * Return: Always 0.
  */
-int main() {
+int main(void)
+{
 	int i;
 	char alp;
 	for (i=0 ; i<10 ; i++){
@@ -14,5 +15,5 @@ int main() {
 		}
 		printf("\n");
 	}
-	return 0;
+	return (0);
 }
