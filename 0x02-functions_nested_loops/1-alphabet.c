@@ -1,22 +1,13 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Entry point
- *
- * Description: Prints the lowercase alphabets using putchar
- *
- * Return: Always 0 (Success)
+ * Print_alphabet - utilizes on the _putchar function to print
+ * 		the alphabet a - z
  */
-int main(void)
+void print_alphabet(void)
 {
-	char alp;
-
-	for (alp = 'a'; alp <= 'z'; alp++)
-	{
-		putchar(alp);
-	}
-	putchar('\n');
-
-	return (0);
-}
-
+	int alp;
+	
+	for (alp='a' ; alp <= 'z' ; ch++)
+		_putchar(alp);
+	_putchar('\n')
