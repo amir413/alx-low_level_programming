@@ -1,35 +1,26 @@
-#include "main.h"
+#include <stdio.h>
 
-/**
- * times_table - prints the 9 times table, starting with 0
- */
-void times_table()
-{
+#define SIZE 10
+
+int main() {
+    int table[SIZE][SIZE];
     int i, j;
 
-    for (i = 0; i <= 9; i++)
-    {
-        for (j = 0; j <= 9; j++)
-        {
-            int result = i * j;
-
-            if (j == 0)
-                _putchar('0');
-            else if (result < 10)
-                _putchar(' ');
-            else
-                _putchar((result / 10) + '0');
-
-            _putchar((result % 10) + '0');
-
-            if (j < 9)
-            {
-                _putchar(',');
-                _putchar(' ');
-            }
-            else
-                _putchar('\n');
+    // Generate the multiplication table
+    for (i = 0; i < SIZE; i++) {
+        for (j = 0; j < SIZE; j++) {
+            table[i][j] = i * j;
         }
     }
+
+    // Print the multiplication table
+    for (i = 0; i < SIZE; i++) {
+        for (j = 0; j < SIZE; j++) {
+            printf("%02d, ", table[i][j]);
+        }
+        printf("\n");
+    }
+
+    return (0);
 }
 
