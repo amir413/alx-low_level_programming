@@ -9,9 +9,6 @@
 int print_last_digit(int number)
 {
     int last_digit = number % 10;
-    if (last_digit < 0)  // Check if the last digit is negative
-        last_digit *= -1;  // Convert it to positive
-        
     _putchar('0' + last_digit);
     return last_digit;
 }
