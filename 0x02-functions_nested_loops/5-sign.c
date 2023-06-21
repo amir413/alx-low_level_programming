@@ -14,16 +14,16 @@ int print_sign(int n)
 {
 	if(n < 0)
 	{
-		std::cout << '-';
+		_putchar ('-');
 		return (-1);
 	}
 	else if (n > 0)
 	{
-		st::cout << '+';
+		putchar ('+');
 		return (1);
 	}
 	else {
-		std::cout << '0';
+		_putchar('0');
 		return (0);
 	}
 }
