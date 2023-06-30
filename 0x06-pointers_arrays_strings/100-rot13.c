@@ -8,12 +8,13 @@ char* rot13(char* str) {
     for (int i = 0; i < length; i++) {
         char c = str[i];
 
-        if ((c >= 'A' && c <= 'M') || (c >= 'a' && c <= 'm'))
-            encoded[i] = c + 13;
-        else if ((c >= 'N' && c <= 'Z') || (c >= 'n' && c <= 'z'))
-            encoded[i] = c - 13;
-        else
+        if ((c >= 'A' && c <= 'Z')) {
+            encoded[i] = ((c - 'A' + 13) % 26) + 'A';
+        } else if ((c >= 'a' && c <= 'z')) {
+            encoded[i] = ((c - 'a' + 13) % 26) + 'a';
+        } else {
             encoded[i] = c;
+        }
     }
 
     encoded[length] = '\0';
