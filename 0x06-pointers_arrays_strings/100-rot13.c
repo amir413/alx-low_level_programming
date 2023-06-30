@@ -1,19 +1,30 @@
-#include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
-char* rot13(char* str) {
-    char* encoded = strdup(str);  // Create a copy of the input string
+/**
+ * rot13 - encodes a string using rot13
+ * @&: input string
+ * Return: encoded string
+ */
 
-    for (int i = 0; encoded[i] != '\0'; i++) {
-        char c = encoded[i];
+char *rot13(char *s)
+{
+	int i;
 
-        if ((c >= 'A' && c <= 'Z')) {
-            encoded[i] = ((c - 'A' + 13) % 26) + 'A';
-        } else if ((c >= 'a' && c <= 'z')) {
-            encoded[i] = ((c - 'a' + 13) % 26) + 'a';
-        }
-    }
+	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKIM";
+	char *ptr = s;
 
-    return encoded;
+	while (*s)
+	{
+		for (i = 0; i <= 52; i++)
+		{
+			if (*s == rot13[i])
+			{
+				*s = ROT13[i];
+				break;
+			}
+		}
+		s++;
+	}
+	return (ptr);
 }
-
