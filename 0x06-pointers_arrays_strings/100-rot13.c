@@ -4,9 +4,9 @@
  * rot13 - encodes a string using rot13
  * @&: input string
  * Return: encoded string
+ * Create a copy of the input string
  */
 char *rot13(char *s)
-/*Create a copy of the input string*/
 
 {
 	int i;
