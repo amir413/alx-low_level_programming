@@ -5,7 +5,9 @@
  * @&: input string
  * Return: encoded string
  */
-char *rot13(char *s)// Create a copy of the input string
+char *rot13(char *s)
+// Create a copy of the input string
+
 {
 	int i;
 
