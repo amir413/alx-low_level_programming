@@ -5,7 +5,7 @@
  * @&: input string
  * Return: encoded string
  */
-
+// Create a copy of the input string
 char *rot13(char *s)
 {
 	int i;
@@ -26,5 +26,4 @@ char *rot13(char *s)
 		}
 		s++;
 	}
-	return (ptr);
-}
+
