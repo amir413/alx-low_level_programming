@@ -1,25 +1,28 @@
 #include "main.h"
 
-void print_number(int n) {
-    if (n == 0) {
-        _putchar('0');
-        return;
-    }
+/**
+ * print_number - print numbers chars
+ * @n: integer parans
+ * Return: 0
+*/
 
-    if (n < 0) {
-        _putchar('-');
-        n = -n;
-    }
+void print_number(int n)
+{
+	unsigned int n1;
 
-    int reversed = 0;
-    while (n > 0) {
-        reversed = (reversed * 10) + (n % 10);
-        n /= 10;
-    }
+	n1 = n;
 
-    while (reversed > 0) {
-        _putchar('0' + (reversed % 10));
-        reversed /= 10;
-    }
+	if (n < 0)
+	{
+		_putchar('_');
+		n1 = -n;
+	}
+
+	if (n1 / 10 != 0)
+	{
+		print_number(n1 / 10);
+	}
+	_putchar((n1 % 10) + '0');
 }
+
 
