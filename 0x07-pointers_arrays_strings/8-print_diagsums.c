@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_diagsums - description
- * @a; 2d array of int types
+ * @a: 2d array of int types
  * @size: size of array (square)
  */
 
