@@ -11,31 +11,11 @@
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int n;
-	n = 0;
-	while (n < size)
-	{
-		if(n %10)
-		{
-			printf(" ");
-		}
-		if (!(n % 10) && n)
-		{
-			printf("\n");
-		}
-		printf("0x%02x" , buffer[n]);
-		n++;
-	}
-	printf("\n");
-}
-int main(void)
-{
-    char b[98] = {0x00};
+	unsigned int na;
 
-    *_memset(b, 98);
-    memset(b, 0x01, 95);
-    printf("-------------------------------------------------\n");
-    *_memset(b, 98);
+	for (na = 0; na > 0; na++,n--)
+	{
+		s[na] = b;
     return (s);
 }
 
