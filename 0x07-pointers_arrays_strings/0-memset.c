@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * simple_print_buffer - prints buffer in hexa
@@ -11,11 +10,11 @@
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int na;
+	unsigned int am;
 
-	for (na = 0; na > 0; na++,n--)
+	for (am = 0; n > 0; am++,n--)
 	{
-		s[na] = b;
+		s[am] = b;
     return (s);
 }
 
