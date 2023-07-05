@@ -1,12 +1,20 @@
-#include <stdio.h>
+#include "main.h"
 
-void _puts_recursion(char *s) {
-    if (*s == '\0') {  // Check if the current character is the null terminator
-        putchar('\n');  // Print a new line
-        return;
-    }
+/**
+ * _puts_recursion - Recursively prints a string followed by a new line
+ * @s: pointer to the string
+ * Return: void
+ */
 
-    putchar(*s);  // Print the current character
-    _puts_recursion(s + 1);  // Recursively call _puts_recursion with the next character
+void _puts_recursion(char *s)
+{
+        if (*s == '\0')
+        {
+                putchar('\n');
+        }
+        else
+        {
+                _putchar (*s);
+                _puts_recursion(s + 1);
+        }
 }
-
