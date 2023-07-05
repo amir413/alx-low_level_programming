@@ -6,5 +6,14 @@ void _print_rev_recursion(char *s)
 		return;
 	}
 	_print_rev_recursion(*s +1);
-	printf(%c",*s);
+	printf("%c",*s);
+}
+int main()
+{
+	char str[] = "amir";
+
+	_print_rev_recursion(str);
+	printf("\n");
+
+	return (0);
 }
