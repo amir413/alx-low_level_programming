@@ -25,4 +25,12 @@ int main(int argc, char **argv)
 		if (*flag)
 		{
 			printf("Error\n");
+			return (1);
+		}
+		else
+		{
+			sum += n;
+		}
+	}
+	printf("%d\n", sum);
 
