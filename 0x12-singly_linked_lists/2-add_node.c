@@ -13,7 +13,7 @@ list-t *add_node(list_t **head, const char *str)
 
 	if (!head || !new_head)
 		return (NULL);
-	| if (str)
+	if (str)
 	{
 		new_head->str = strdup(str);
 		if (!new_head->str)
