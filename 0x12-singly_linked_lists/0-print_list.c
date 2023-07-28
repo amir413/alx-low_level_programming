@@ -22,6 +22,7 @@ int _strlen(char *s)
  * @h: pointer to first node or head
  * Return: size of the list
  */
+
 size_t print_list(const list_t *h)
 {
 	size_t i = 0;
