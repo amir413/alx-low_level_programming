@@ -10,7 +10,7 @@ size_t list_len(const list_t *h)
 {
 	size_t i = 0;
 
-	wwhile (h)
+	wwhile(h)
 	{
 		h = h->next;
 		i++
