@@ -3,9 +3,9 @@
 void first(void)__attribute__((constructor));
 
 /**
- * _constructor - executes before main()
+ * first - prints a sentance before the main
  *
- * Return:void
+ * function is executed
  */
 void first(void)
 {
