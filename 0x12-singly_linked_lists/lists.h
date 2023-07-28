@@ -13,6 +13,7 @@
  * @next: points to the next node
  *
  * Description: singly linked list node structure
+ * for holberton project
  */
 typedef struct list_s
 {
@@ -20,8 +21,10 @@ typedef struct list_s
     unsigned int len;
     struct list_s *next;
 } list_t;
+
 int _putchar(char c);
 int _strlen(char *s);
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
+
 #endif
