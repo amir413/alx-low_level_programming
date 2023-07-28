@@ -1,15 +1,15 @@
 #include "lists.h"
 
 /**
- * _strlen return length of the string
+ * _strlen - return length of the string
  * @s: the string whose length to check
  *
  * Return: intgere length of the string
  */
-
 int _strlen(char *s)
 {
 	int i = 0;
+
 	if (!s)
 		return (0);
 	while (*s++)
