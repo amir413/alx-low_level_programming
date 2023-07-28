@@ -3,7 +3,7 @@
 /**
  * add_node_end -adds a node to the list's end
  * @head: address of pointer to head node
- * @str: strfield of node
+ * @str: strfield of the node
  *
  * Return: size of list
  */
@@ -22,3 +22,15 @@ list_t *add_node_end(list_t **head, const char *str)
 			free(new_node);
 			return (NULL);
 		}
+		new_node->len = _stlen(new_node->str);
+	}
+	if (node)
+	{
+		while (node->next)
+			node = node->next;
+		node->next = new_node;
+	}
+	else
+		*head = new_node;
+	return (new_node);
+}
