@@ -1,7 +1,6 @@
-90% of storage used … If you run out, you won't have enough storage to create, edit, and upload files. Try 100 GB of storage for EGP 14.99 EGP 0 for 1 month.
-2-append_text_to_file.c
-#include "main.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
  * append_text_to_file - appends text at the end of a file
  * @filename: filename.
@@ -10,32 +9,35 @@
  * Return: 1 if the file exists. -1 if the fails does not exist
  * or if it fails.
  */
-int append_text_to_file(const char *filename, char *text_content)
-{
-	int fd;
-	int nletters;
-	int rwr;
 
-	if (!filename)
-		return (-1);
+int append_text_to_file(const char *filename, char *text_content) {
+    // check if filename is NULL
+    if(filename == NULL) {
+        return -1;
+    }
 
-	fd = open(filename, O_WRONLY | O_APPEND);
+    // open the file in append mode
+    FILE *file = fopen(filename, "a");
 
-	if (fd == -1)
-		return (-1);
+    // check if the file was opened successfully
+    if(file == NULL) {
+        return -1;
+    }
 
-	if (text_content)
-	{
-		for (nletters = 0; text_content[nletters]; nletters++)
-			;
+    // check if text_content is not NULL
+    if(text_content != NULL) {
+        // write the text_content to the file
+        int result = fputs(text_content, file);
+        if (result == EOF) {
+            // Close the file before returning
+            fclose(file);
+            return -1;
+        }
+    }
 
-		rwr = write(fd, text_content, nletters);
+    // close the file
+    fclose(file);
 
-		if (rwr == -1)
-			return (-1);
-	}
-
-	close(fd);
-
-	return (1);
+    // return success
+    return 1;
 }
