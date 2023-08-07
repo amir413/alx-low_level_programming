@@ -1,43 +1,34 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "main.h"
+
 /**
- * append_text_to_file - appends text at the end of a file
- * @filename: filename.
- * @text_content: added content.
+ * append_text_to_file - Appends text at the end of a file.
+ * @filename: A pointer to the name of the file.
+ * @text_content: The string to add to the end of the file.
  *
- * Return: 1 if the file exists. -1 if the fails does not exist
- * or if it fails.
+ * Return: If the function fails or filename is NULL - -1.
+ *         If the file does not exist the user lacks write permissions - -1.
+ *         Otherwise - 1.
  */
+int append_text_to_file(const char *filename, char *text_content)
+{
+	int o, w, len = 0;
 
-int append_text_to_file(const char *filename, char *text_content) {
-    // check if filename is NULL
-    if(filename == NULL) {
-        return -1;
-    }
+	if (filename == NULL)
+		return (-1);
 
-    // open the file in append mode
-    FILE *file = fopen(filename, "a");
+	if (text_content != NULL)
+	{
+		for (len = 0; text_content[len];)
+			len++;
+	}
 
-    // check if the file was opened successfully
-    if(file == NULL) {
-        return -1;
-    }
+	o = open(filename, O_WRONLY | O_APPEND);
+	w = write(o, text_content, len);
 
-    // check if text_content is not NULL
-    if(text_content != NULL) {
-        // write the text_content to the file
-        int result = fputs(text_content, file);
-        if (result == EOF) {
-            // Close the file before returning
-            fclose(file);
-            return -1;
-        }
-    }
+	if (o == -1 || w == -1)
+		return (-1);
 
-    // close the file
-    fclose(file);
+	close(o);
 
-    // return success
-    return 1;
+	return (1);
 }
