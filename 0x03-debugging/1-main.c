@@ -1,24 +1,23 @@
-#include <stdio.h>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-/**
-* main - causes an infinite loop
-* Return: 0
-*/
+#include HEADS 0
+#include TAILS 1
 
-int main(void)
+using namespace std;
+
+int main() {
+    srand((unsigned int) time(NULL));
+
+    if (flipCoin () == HEADS) cout << "Heads" << endl;
+    else cout << "Tails" << endl;
+
+    return 0;
+}
+
+int flipCoin ()
 {
-	int i;
-
-	printf("Infinite loop incoming :(\n");
-
-	i = 0;
-
-	/*while (i < 10) */
-	/*{ */
-	/*      putchar(i);*/
-	/*} */
-
-	printf("Infinite loop avoided! \\o/\n");
-
-	return (0);
+    if (rand() % 2 == 0) return HEADS;
+    else return TAILS;
 }
